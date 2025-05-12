@@ -105,12 +105,12 @@ nupude_rida.pack(pady=10)
 
 
 
-tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Goudy Stout",8),fg="pink").pack(side="right",pady=0)
-tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Goudy Stout",7),fg="blue").pack(side="left")
-tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Goudy Stout",4),fg="purple").pack(side="right")
-tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Goudy Stout",5),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Goudy Stout",10),fg="pink").pack(side="right",pady=0)
+tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Goudy Stout",10),fg="blue").pack(side="left")
+tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Goudy Stout",10),fg="purple").pack(side="right")
+tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Goudy Stout",10),fg="black").pack(side="left")
 tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Goudy Stout",10),fg="green").pack(side="left")
-tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",6),fg="red").pack(side="left")
+tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",10),fg="red").pack(side="left")
 
 tekstikast = tk.Text(aken, height=10, width=40)
 tekstikast.pack(pady=15)
