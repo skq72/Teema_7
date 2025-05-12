@@ -113,7 +113,7 @@ tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=
 tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",6),fg="red").pack(side="left")
 
 tekstikast = tk.Text(aken, height=10, width=40)
-tekstikast.pack(pady=12)
+tekstikast.pack(pady=15)
 
 
 aken.mainloop()
