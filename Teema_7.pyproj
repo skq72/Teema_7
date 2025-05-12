@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a2e57f38-1494-4692-80fa-b6b49542e777</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Teema_7.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,8 @@
     <Compile Include="Teema_7.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="book.ico" />
+    <Content Include="kontaktid.json" />
     <Content Include="TextFile1.txt" />
     <Content Include="kontaktid.txt" />
   </ItemGroup>
