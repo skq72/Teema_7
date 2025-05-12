@@ -90,13 +90,13 @@ aken.iconbitmap("book.ico")
 aken.configure(bg="orange")
 otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
 otsingu_viide.set("")
-tk.Label(aken, text="Nimi: ",font=("Calibri",10),fg="black").pack()
+tk.Label(aken, text="Nimi: ",font=("Calibri",10),fg="grey").pack()
 nimi_entry=tk.Entry(aken)
 nimi_entry.pack()
 tk.Label(aken, text="E-mail: ",font=("Calibri",10),fg="black").pack()
 email_entry=tk.Entry(aken)
 email_entry.pack()
-tk.Label(aken, text="Telefon: ",font=("Calibri",10),fg="black").pack()
+tk.Label(aken, text="Telefon: ",font=("Calibri",10),fg="green").pack()
 telefon_entry=tk.Entry(aken)
 telefon_entry.pack()
 
@@ -105,12 +105,12 @@ nupude_rida.pack(pady=10)
 
 
 
-tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Goudy Stout",5),fg="black").pack(side="left",pady=0)
-tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Goudy Stout",5),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Goudy Stout",5),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Goudy Stout",8),fg="pink").pack(side="right",pady=0)
+tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Goudy Stout",7),fg="blue").pack(side="left")
+tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Goudy Stout",4),fg="purple").pack(side="right")
 tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Goudy Stout",5),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Goudy Stout",5),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",5),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Goudy Stout",10),fg="green").pack(side="left")
+tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",6),fg="red").pack(side="left")
 
 tekstikast = tk.Text(aken, height=10, width=40)
 tekstikast.pack(pady=12)
