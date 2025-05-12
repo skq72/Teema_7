@@ -85,7 +85,7 @@ def muuda_kontakt_gui():
 
 
 aken = tk.Tk()
-aken.title("Telefoniraamat")
+aken.title("kontaktandmed")
 aken.iconbitmap("book.ico")
 aken.configure(bg="orange")
 otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
