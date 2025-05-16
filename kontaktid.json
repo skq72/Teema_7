@@ -1,12 +1,17 @@
 ﻿[
     {
-        "nimi": "Kirill",
-        "telefon": "57787787",
-        "email": "kirillgorshkov264@gmail.com"
-    },
-    {
         "nimi": "Nastja",
         "telefon": "57782147",
         "email": "nastja@gmail.com"
+    },
+    {
+        "nimi": "Artem",
+        "telefon": "57380211",
+        "email": "arttem@gmail.com"
+    },
+    {
+        "nimi": "Kirill",
+        "telefon": "57787787",
+        "email": "kirillgorshkov264@gmail.com"
     }
 ]

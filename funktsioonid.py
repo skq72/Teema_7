@@ -29,9 +29,15 @@ def kustuta_kontakt(kontaktid, nimi):
 def sorteeri_kontaktid(kontaktid, vaike):
     return sorted(kontaktid, key=lambda x: x[vaike].lower())
 
+def sorteeri_za(kontaktid, vaike):
+    return sorted(kontaktid, key=lambda x: x[vaike].lower(), reverse=True)
+
+
 def muuda_kontakt(kontaktid, vana_nimi ,uus_nimi, uus_telefon, uus_email):
     for k in kontaktid:
         if k["nimi"].lower()==vana_nimi.lower():
             k["nimi"]=uus_nimi
             k["telefon"]=uus_telefon
             k["email"]=uus_email
+
+    

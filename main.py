@@ -1,9 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
+from turtle import window_height
 from funktsioonid import *
-
-
-
 
 kontaktid = loe_failist()
 
@@ -11,6 +9,15 @@ def kuva_kontaktid():
     tekstikast.delete("1.0", "end")
     for kontakt in kontaktid:
         tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
+
+def kuva_nimi_telefon():
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']}\n")
+def kuva_emailid():
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid:
+        tekstikast.insert("end", f"{kontakt['email']}\n")
 
 def lisa_kontakt_gui():
     nimi = nimi_entry.get()
@@ -44,7 +51,6 @@ def otsi_kontakt_gui():
     else:
         messagebox.showwarning("Ei leitud", "Kontakt puudub.")
 
-
 def kustuta_kontakt_gui():
     nimi=nimi_entry.get()
     if kustuta_kontakt(kontaktid, nimi):
@@ -54,12 +60,30 @@ def kustuta_kontakt_gui():
     else:
         messagebox.showwarning("Ei leitud", "Kontakti ei leitud.")
 
+
 def sorteeri_gui():
     kontaktid_sorted=sorteeri_kontaktid(kontaktid, "nimi")
     tekstikast.delete("1.0", "end")
     for kontakt in kontaktid_sorted:
         tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
 
+def sorteeriza_gui():
+    kontaktid_sorted=sorteeri_za(kontaktid, "nimi")
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid_sorted:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
+
+def sorteeri_num():
+    kontaktid_sorted=sorteeri_kontaktid(kontaktid, "telefon")
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid_sorted:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
+
+def sorteeri_email():
+    kontaktid_sorted=sorteeri_kontaktid(kontaktid, "email")
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid_sorted:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
 
 def muuda_kontakt_gui():
     vana_nimi=otsingu_viide.get()
@@ -78,42 +102,56 @@ def muuda_kontakt_gui():
     else:
         messagebox.showwarning("Puuduvad andmed","Palun täida kõik muudatuseks.")
 
-
-
-
-
-
-
 aken = tk.Tk()
 aken.title("kontaktandmed")
 aken.iconbitmap("book.ico")
 aken.configure(bg="orange")
 otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
 otsingu_viide.set("")
-tk.Label(aken, text="Nimi: ",font=("Calibri",10),fg="grey").pack()
+tk.Label(aken, text="Nimi: ",font=("Calibri",10),fg="green").place(x=-0, y=0 )
 nimi_entry=tk.Entry(aken)
-nimi_entry.pack()
-tk.Label(aken, text="E-mail: ",font=("Calibri",10),fg="black").pack()
+nimi_entry.place(x=38, y=0 )
+tk.Label(aken, text="E-mail: ",font=("Calibri",10),fg="green").place(x=-0, y=25 )
 email_entry=tk.Entry(aken)
-email_entry.pack()
-tk.Label(aken, text="Telefon: ",font=("Calibri",10),fg="green").pack()
+email_entry.place(x=47, y=25 )
+tk.Label(aken, text="Telefon: ",font=("Calibri",10),fg="green").place(x=-0, y=50 )
 telefon_entry=tk.Entry(aken)
-telefon_entry.pack()
+telefon_entry.place(x=52, y=50 )
 
 nupude_rida=tk.Frame(aken)
-nupude_rida.pack(pady=10)
+nupude_rida.pack(pady=0)
+nupude_rida0=tk.Frame(aken)
+nupude_rida0.pack(pady=0)
+nupude_rida1=tk.Frame(aken)
+nupude_rida1.pack(pady=0)
+nupude_rida2=tk.Frame(aken)
+nupude_rida2.pack(pady=0)
+nupude_rida3=tk.Frame(aken)
+nupude_rida3.pack(pady=0)
+nupude_rida4=tk.Frame(aken)
+nupude_rida4.pack(pady=0)
+nupude_rida5=tk.Frame(aken)
+nupude_rida5.pack(pady=0)
+nupude_rida6=tk.Frame(aken)
+nupude_rida6.pack(pady=0)
+nupude_rida7=tk.Frame(aken)
+nupude_rida7.pack(pady=0)
+nupude_rida8=tk.Frame(aken)
+nupude_rida8.pack(pady=0)
 
+tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida0, text="Kuva kontakti email", command=kuva_emailid,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida1, text="Kuva telefon_nimi", command=kuva_nimi_telefon,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida2, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida3, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida4, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida5, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida6, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida7, text="Sorteeri kontakt telefoni jargi", command=sorteeri_num,font=("Goudy Stout",8),fg="green").pack()
+tk.Button(nupude_rida8, text="Sorteeri kontakt emaili jargi", command=sorteeri_email,font=("Goudy Stout",8),fg="green").pack(side="right",pady=0)
+tk.Button(nupude_rida8, text="Sorteeri kontakt Z-A", command=sorteeri_za,font=("Goudy Stout",8),fg="green").pack(side="right",pady=0)
 
-
-tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Goudy Stout",10),fg="pink").pack(side="right",pady=0)
-tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Goudy Stout",10),fg="blue").pack(side="left")
-tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Goudy Stout",10),fg="purple").pack(side="right")
-tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Goudy Stout",10),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Goudy Stout",10),fg="green").pack(side="left")
-tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_gui,font=("Goudy Stout",10),fg="red").pack(side="left")
-
-tekstikast = tk.Text(aken, height=10, width=40)
-tekstikast.pack(pady=15)
-
+tekstikast = tk.Text(aken, height=13, width=65)
+tekstikast.pack(pady=5, side="left")
 
 aken.mainloop()
