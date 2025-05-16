@@ -155,3 +155,6 @@ tekstikast = tk.Text(aken, height=13, width=65)
 tekstikast.pack(pady=5, side="left")
 
 aken.mainloop()
+
+
+
